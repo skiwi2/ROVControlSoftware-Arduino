@@ -25,10 +25,10 @@ void loop() {
     int amountInt = amount.toInt();
     
     if (xy == "x") {
-      servoX.write(amountInt);
+      servoX.write(180 - amountInt);
     }
     else if (xy == "y") {
-      servoY.write(amountInt);
+      servoY.write(180 - amountInt);
     }
     else {
       Serial.println("Unrecognized command: " + command);
