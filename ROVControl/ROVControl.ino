@@ -27,10 +27,10 @@ void loop() {
     String amount = command.substring(spaceIndex, command.length());
     int amountInt = amount.toInt();
     
-    if (xy == "x") {
+    if (xy == "cx") {
       servoX.write(180 - amountInt);
     }
-    else if (xy == "y") {
+    else if (xy == "cy") {
       servoY.write(180 - amountInt);
     }
     else {
