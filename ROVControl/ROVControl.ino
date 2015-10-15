@@ -26,6 +26,12 @@ void setup() {
   servoX.write(posX);
   servoY.write(posY);
   
+  //set motor pins to output pin mode
+  pinMode(MOTOR_LF_PIN, OUTPUT);
+  pinMode(MOTOR_LB_PIN, OUTPUT);
+  pinMode(MOTOR_RF_PIN, OUTPUT);
+  pinMode(MOTOR_RB_PIN, OUTPUT);
+  
   //set motor pins to low
   digitalWrite(MOTOR_LF_PIN, LOW);
   digitalWrite(MOTOR_LB_PIN, LOW);
