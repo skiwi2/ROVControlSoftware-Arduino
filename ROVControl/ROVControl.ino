@@ -5,7 +5,7 @@ static int SERVO_CX_PIN = 11;
 static int SERVO_CY_PIN = 10;
 
 //shovel pins
-static int SERVO_SX_PIN = 13;
+static int SERVO_SY_PIN = 13;
 
 //motor pins
 static int MOTOR_LF_PIN = 3;
@@ -15,17 +15,17 @@ static int MOTOR_RB_PIN = 9;
 
 Servo servoCX;
 Servo servoCY;
-Servo servoSX;
+Servo servoSY;
 
 int posCY = 90;
 int posCX = 90;
-int posSX = 90;
+int posSY = 90;
 
 void setup() {
   // put your setup code here, to run once:
   servoCX.attach(SERVO_CX_PIN);
   servoCY.attach(SERVO_CY_PIN);
-  servoSX.attach(SERVO_SX_PIN);
+  servoSY.attach(SERVO_SY_PIN);
   Serial.begin(9600);
   
   //set camera servos to default position
@@ -33,10 +33,10 @@ void setup() {
   servoCY.write(posCY);
   
   //set shovel servos to default position
-  servoSX.write(posSX);
+  servoSY.write(posSY);
   
   //set shovel servo pins to output pin mode
-  pinMode(SERVO_SX_PIN, OUTPUT);
+  pinMode(SERVO_SY_PIN, OUTPUT);
   
   //set motor pins to output pin mode
   pinMode(MOTOR_LF_PIN, OUTPUT);
@@ -65,8 +65,8 @@ void loop() {
     else if (command == "cy") {
       servoCY.write(180 - value.toInt());
     }
-    else if (command == "sx") {
-      servoSX.write(180 - value.toInt());
+    else if (command == "sy") {
+      servoSY.write(180 - value.toInt());
     }
     else if (command == "ml") {
       setLeftMotor(value.toInt());
